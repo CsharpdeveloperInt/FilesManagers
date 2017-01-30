@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Вход";
+}
+
+<h2>Вход</h2>
+<div ng-app="MyApp" class="container">
+    <div ng-controller="LoginController">
+        <form novalidate name="loginForm" ng-submit="Login()">
+            <div style="color: rgb(142, 2, 2)">{{message}}</div>
+
+            <div ng-show="!IsLogedIn">
+                <div class="form-group">
+                    <label for="cLogin">Логин</label>
+                    <input type="text" class="form-control" ng-model="LoginData.Login" id="cLogin" name="cLogin" placeholder="Логин">
+                </div>
+                <div class="form-group">
+                    <label for="pass">Password</label>
+                    <input type="password" class="form-control" ng-model="LoginData.Pass" id="cPass" name="cPass"placeholder="Пароль">
+                </div>
+               
+                <button type="submit" class="btn btn-default">Вход</button>
+
+            </div>
+
+
+
+                
+</form>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/app/controllers/LoginController.js"></script>
+}
